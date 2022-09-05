@@ -45,8 +45,6 @@ test('Can change the name,age and gender', async () => {
   // console.log('age:',age.textContent)
   const gender = await waitFor(() => screen.findByTestId('gender'));
   // console.log('gender:',gender.textContent)
-  const newAge = await waitFor(() => screen.findByTestId('newAge'));
-  // console.log('newAge:',newAge.textContent)
   
 
   // assert the values
@@ -60,5 +58,4 @@ test('Can change the name,age and gender', async () => {
   expect(name.textContent).toBe('My name is Waleed');
   expect(age.textContent).toBe('My age is 25');
   expect(gender.textContent).toBe('My gender is female');
-  expect(newAge.textContent).toBe('My new age is 30');
 })
