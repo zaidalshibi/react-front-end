@@ -68,3 +68,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+[![Node.js CI](https://github.com/zaidalshibi/react-front-end/actions/workflows/node.js.yml/badge.svg)](https://github.com/zaidalshibi/react-front-end/actions/workflows/node.js.yml)
