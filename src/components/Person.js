@@ -1,4 +1,4 @@
-import axios from "axios";
+import Axios from "axios";
 import { useState } from "react";
 
 function Person () {
@@ -14,7 +14,7 @@ function Person () {
         setGender( event.target.children[ 4 ].children[ 0 ].value || gender);
         let oldAge = event.target.children[ 2 ].children[ 0 ].value || age;
         setAge( oldAge );
-        axios.post( `${process.env.REACT_APP_SERVER}/person?name=${name}&age=${oldAge}&gender=${gender}` )
+        Axios.post( `${process.env.REACT_APP_SERVER}/person?name=${name}&age=${oldAge}&gender=${gender}` )
             .then( response => {
                 setNewAge( response.data );
             } )
