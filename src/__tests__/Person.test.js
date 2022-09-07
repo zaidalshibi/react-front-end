@@ -55,7 +55,7 @@ test( 'Can change the name,age and gender', async () => {
 
     // test the axios request for the backend server
     act(  () => {
-        axios.post( `${process.env.REACT_APP_SERVER}/person?name=${nameInput.value}&age=${ageInput.value}&gender=${genderInput.value}` )
+        axios.post( `https://express-server-zaid.herokuapp.com/person?name=${nameInput.value}&age=${ageInput.value}&gender=${genderInput.value}` )
             .then( response => {
                 expect( response.data ).toBe( 30 );
             } )
