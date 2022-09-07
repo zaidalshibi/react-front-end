@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-conditional-expect */
 import Person from "../components/Person";
 import React from 'react';
 import { render, fireEvent, waitFor, screen, act } from '@testing-library/react';
@@ -6,7 +7,7 @@ import axios from "axios";
 
 
 const newTimeout = 10000;
-jest.setTimeout(newTimeout)
+jest.setTimeout( newTimeout );
 
 test( 'Load and displays starter data', async () => {
     render( <Person /> );
@@ -53,9 +54,13 @@ test( 'Can change the name,age and gender', async () => {
     expect( gender.textContent ).toBe( 'My gender is female' );
 
     // test the axios request for the backend server
-    act(async () => {
-    await axios.post(`${process.env.REACT_APP_SERVER}/person?name=${nameInput.value}&age=${ageInput.value}&gender=${genderInput.value}`)
-    }) .then( response => {
-    expect( response.data ).toBe( 30 );
-    } )
+    act(  () => {
+        axios.post( `https://express-server-zaid.herokuapp.com/person?name=${nameInput.value}&age=${ageInput.value}&gender=${genderInput.value}` )
+            .then( response => {
+                expect( response.data ).toBe( 30 );
+            } )
+            .catch( error => {
+                console.log( error );
+            } );
+    } );
 } );
